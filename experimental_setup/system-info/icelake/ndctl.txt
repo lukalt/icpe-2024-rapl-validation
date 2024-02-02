@@ -1,0 +1,20 @@
+[
+  {
+    "dev":"namespace1.0",
+    "mode":"devdax",
+    "map":"dev",
+    "size":133175443456,
+    "uuid":"50630207-b1de-45e4-a9cb-987972e99ab3",
+    "chardev":"dax1.0",
+    "align":2097152
+  },
+  {
+    "dev":"namespace0.0",
+    "mode":"devdax",
+    "map":"dev",
+    "size":133175443456,
+    "uuid":"997a2218-38f3-4834-9a99-fdb06e5ef5a2",
+    "chardev":"dax0.0",
+    "align":2097152
+  }
+]

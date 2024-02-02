@@ -1,0 +1,16 @@
+[
+  {
+    "chardev":"dax1.0",
+    "size":133175443456,
+    "target_node":3,
+    "align":2097152,
+    "mode":"system-ram"
+  },
+  {
+    "chardev":"dax0.0",
+    "size":133175443456,
+    "target_node":2,
+    "align":2097152,
+    "mode":"system-ram"
+  }
+]
