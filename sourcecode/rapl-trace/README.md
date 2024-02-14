@@ -4,9 +4,9 @@ The measurements are printed to the standard error stream.
 This application has been designed for a minimum overhead of the measurements.
 
 ## Requirements
-* CMake
-* C Compiler Installed
-* Python3 Installed
+* make
+* gcc
+* python3
 
 ## Usage
 To trace RAPL measurements during the execution of an application, run this application the following way:
