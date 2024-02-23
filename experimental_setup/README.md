@@ -5,7 +5,7 @@
 - Table 2 specifies memory modules tested
 
 
-### Hardware devices for direct energy consumption measurements:
+### Hardware devices for direct energy consumption measurements (Figures 7-15):
 - 2 x DDR4-compatible riser cards (Figure 2)
 - 1 x Raspberry Pi 3B or later
 - 2 x INA2180 current-sense amplifier
@@ -17,7 +17,7 @@
 The devices to be connected as shown in **circuit_schematic.pdf**.
 
 
-## Directory content:
+## Directory Content:
 
 **photos**
 - *data-processing.png*: Data processing devices for the instrumented Ice Lake-SP system
