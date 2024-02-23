@@ -1,11 +1,9 @@
-# Experimental Setup
-
-## System requirements:
+## General System Requirements:
 - Table 1 in paper provides an overview of the Intel servers used for the experiments.
 - Table 2 specifies memory modules tested
 
 
-### Hardware devices for direct energy consumption measurements (Figures 7-15):
+#### Additional hardware devices for direct energy consumption measurements (required for Figures 7-15):
 - 2 x DDR4-compatible riser cards (Figure 2)
 - 1 x Raspberry Pi 3B or later
 - 2 x INA2180 current-sense amplifier

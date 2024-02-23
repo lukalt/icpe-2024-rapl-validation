@@ -1,16 +1,4 @@
-This directory contains the source code for conducting measurements. Before running the scripts, make sure the environment matches the:
-- hardware setup (see **experimental_setup/**)
-- software setup (see **experimental_setup/system-info**)
-
-## To collect the measurement data for:
-- Figure 5:
-    - TODO
-- Figure 6:
-    - navigate to **sourcecode/rapl-update-interval**
-    - follow instructions in **README.md**
-- Figure 7-15:
-    - navigate to **sourcecode/**
-    - follow instructions in TODO
+This directory contains the source code for conducting measurements.
 
 ## Directory Content:
 
