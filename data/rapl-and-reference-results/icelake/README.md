@@ -11,8 +11,7 @@ Data is provided for the following hardware configurations:
 - `dram`: `1x32GB and 1x128GB PMM per socket. Threads are placed on socket 0. Memory allocation on local DRAM of socket 0.`
 - `optane`: `1x32GB and 1x128GB PMM per socket. Threads are placed on socket 0. Memory allocation on local PMM of socket 0.`
 
-Each subfolder contains the results for different hardware configurations with a subfolder for the date the experiments were conducted on.
-It contains the following files:
+Each subfolder contains the results for different hardware configurations containing the following files:
 - `config.json`: JSON file describing the experimental setup in a machine-readable format:
   - `riser_names`: Array of the names for each riser (usually corresponds to the type of the memory and/or the socket id)
   - `memory_population`: Text describing the memory configuration
