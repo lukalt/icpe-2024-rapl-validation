@@ -1,3 +1,9 @@
+#ifndef _DEFAULT_SOURCE
+#define _DEFAULT_SOURCE
+#endif
+#ifndef _XOPEN_SOURCE
+#define _XOPEN_SOURCE 500
+#endif
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
@@ -15,12 +21,9 @@
 #include <string.h>
 #include <sys/time.h>
 #include <sys/wait.h>
-
+#define TOGGLE_GPIO 1
 #ifdef TOGGLE_GPIO
 #include <Python.h>
-#endif
-#ifndef _XOPEN_SOURCE
-#define _XOPEN_SOURCE 500
 #endif
 #define MSR_RAPL_POWER_UNIT		0x606
 /* Package RAPL Domain */
@@ -436,7 +439,7 @@ PyRun_SimpleString("from PyMCP2221A import PyMCP2221A\n"
         system(args); // fork a new process, execute delegate command in child process
         return 0;
     } else {
-        double start_ts;
+        double start_ts = 0.0;
         // poll rapl data by directly reading MSR while the child process is running
         while (1) {
             for (j = 0; j < total_packages; j++) {
@@ -491,23 +494,22 @@ double end = get_wall_time();
 }
 
 int main(int argc, char *argv[]) {
-    detect_packages();
     unsigned int totalArgCharLength = 0;
     if(argc <= 1) {
-        printf("usage: ./<command> <sampling_microseconds> [command...]");
+        printf("usage: ./<command> <sampling_microseconds> [command...]\n");
         return EINVAL;
     }
     int sampling_us;
     sampling_us = atoi(argv[1]); // converts string to int
     if(sampling_us <= 0) {
-        printf("error: sampling interval can't be negative");
+        printf("error: sampling interval can't be negative\n");
         return EINVAL;
     }
     printf("Sampling interval: %d microseconds\n", sampling_us);
 #ifdef TOGGLE_GPIO
     printf("GPIO triggering for measurements enabled\n");
 #else
-    printf("GPIO triggering for measurements is NOT enabled. Compile with -DTOGGLE-GPIO if you wish so\n");
+    printf("GPIO triggering for measurements is NOT enabled. Compile with -DTOGGLE_GPIO if you wish so\n");
 #endif
     for (int i = 2; i < argc; i++) {
         totalArgCharLength += strlen(argv[i]) + 1; // count how many bytes be need to allocate to hold the whole, joined string
@@ -521,7 +523,7 @@ int main(int argc, char *argv[]) {
         strcat(args, argv[i]);
     }
 
-
+    detect_packages();
     printf("Command to execute: %s\n", args);
 
     rapl_msr(detect_cpu(),  args, sampling_us);
