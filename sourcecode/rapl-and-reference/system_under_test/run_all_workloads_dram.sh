@@ -1,6 +1,6 @@
 #!/bin/bash
 SAMPLE_INTERVAL=5
-SCRIPT_PATH="./benchmarks/workloads/run_dram.sh"
+SCRIPT_PATH="./workloads/run_dram.sh"
 
 run_measurement() {
     echo "Running experiment $1"

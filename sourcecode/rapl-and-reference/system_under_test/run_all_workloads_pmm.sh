@@ -1,6 +1,6 @@
 #!/bin/bash
 SAMPLE_INTERVAL=5
-SCRIPT_PATH="./benchmarks/workloads/run_optane.sh"
+SCRIPT_PATH="./workloads/run_pmm.sh"
 run_measurement() {
     echo "Running experiment $1"
     python3 measure-wrapper.py -I$SAMPLE_INTERVAL -N$1 $2

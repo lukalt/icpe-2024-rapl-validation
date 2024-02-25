@@ -1,7 +1,7 @@
 OBJS	= main.o
 SOURCE	= main.c
 HEADER	= 
-OUT	= main
+OUT	= main.exe
 CC	 = gcc
 FLAGS	 = -g -c -Wall
 LFLAGS	 = 
@@ -9,9 +9,9 @@ LFLAGS	 =
 all: $(OBJS)
 	$(CC) -g $(OBJS) -o $(OUT) $(LFLAGS)
 
-main.o: main.c
-	$(CC) $(FLAGS) main.c 
-
-
+$(OBJS): $(SOURCE)
+	$(CC) $(FLAGS) $(SOURCE)
+run:
+    ./$(OUT)
 clean:
 	rm -f $(OBJS) $(OUT)

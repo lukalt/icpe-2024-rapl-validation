@@ -1,0 +1,5 @@
+.ipynb_checkpoints/
+*.exe
+*.o
+*.out
+.idea/
