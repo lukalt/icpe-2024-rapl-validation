@@ -12,6 +12,6 @@ all: $(OBJS)
 $(OBJS): $(SOURCE)
 	$(CC) $(FLAGS) $(SOURCE)
 run:
-    ./$(OUT)
+	./$(OUT)
 clean:
 	rm -f $(OBJS) $(OUT)
