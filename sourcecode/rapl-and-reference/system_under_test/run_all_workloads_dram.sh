@@ -4,7 +4,7 @@ SCRIPT_PATH="./workloads/run_dram.sh"
 
 run_measurement() {
     echo "Running experiment $1"
-    python3 measure-wrapper.py -I$SAMPLE_INTERVAL -N$1 $2
+    python3 measure-power-rapl.py -I$SAMPLE_INTERVAL -N$1 $2
     echo "Experiment completed"
 }
 
@@ -28,24 +28,24 @@ for run in {1}; do
     sleep 5
     run_measurement "mulpd" "$SCRIPT_PATH mulpd 1"
     sleep 5
-    run_measurement "stream_add" "$SCRIPT_PATH stream_add 32"
+    run_measurement "stream_add" "$SCRIPT_PATH stream-separated/stream_add 32"
     sleep 5
-    run_measurement "stream_scale" "$SCRIPT_PATH stream_scale 32"
+    run_measurement "stream_scale" "$SCRIPT_PATH stream-separated/stream_scale 32"
     sleep 5
-    run_measurement "stream_triad" "$SCRIPT_PATH stream_triad 32"
+    run_measurement "stream_triad" "$SCRIPT_PATH stream-separated/stream_triad 32"
     sleep 5
-    run_measurement "stream_copy_32" "$SCRIPT_PATH stream_copy 32"
+    run_measurement "stream_copy_32" "$SCRIPT_PATH stream-separated/stream_copy 32"
     sleep 5
-    run_measurement "stream_copy_24" "$SCRIPT_PATH stream_copy 24"
+    run_measurement "stream_copy_24" "$SCRIPT_PATH stream-separated/stream_copy 24"
     sleep 5
-    run_measurement "stream_copy_16" "$SCRIPT_PATH stream_copy 16"
+    run_measurement "stream_copy_16" "$SCRIPT_PATH stream-separated/stream_copy 16"
     sleep 5
-    run_measurement "stream_copy_8" "$SCRIPT_PATH stream_copy 8"
+    run_measurement "stream_copy_8" "$SCRIPT_PATH stream-separated/stream_copy 8"
     sleep 5
-    run_measurement "stream_copy_4" "$SCRIPT_PATH stream_copy 4"
+    run_measurement "stream_copy_4" "$SCRIPT_PATH stream-separated/stream_copy 4"
     sleep 5
-    run_measurement "stream_copy_1" "$SCRIPT_PATH stream_copy 1"
+    run_measurement "stream_copy_1" "$SCRIPT_PATH stream-separated/stream_copy 1"
     sleep 5
-    run_measurement "stream_combined" "$SCRIPT_PATH stream_c"
+    run_measurement "stream_combined" "$SCRIPT_PATH stream-combined/stream_c"
 
 done

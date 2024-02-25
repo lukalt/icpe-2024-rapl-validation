@@ -1,17 +1,21 @@
 #!/usr/bin/env python
 #  -*- coding: utf-8 -*-
+import csv
+import threading
+from pathlib import Path
+from time import sleep, time
+
 import RPi.GPIO as GPIO
 from serial import Serial
-import threading
-from time import sleep, time
+
 from daqhats import mcc128, OptionFlags, HatIDs, HatError, TriggerModes, AnalogInputMode, \
     AnalogInputRange
 from daqhats.daqhats_utils import select_hat_device, enum_mask_to_string, \
     chan_list_to_mask, input_mode_to_string, input_range_to_string
-import csv
 from lcd import Adafruit_LCD1602
 from lcd import PCF8574
-from pathlib import Path
+
+# GPIO pin at which the trigger pin is connected
 GPIO_BOARD_TRIGGER = 12
 
 READ_ALL_AVAILABLE = -1
@@ -102,7 +106,7 @@ class Measurement:
 
         # Store the channels in a list and convert the list to a channel mask that
         # can be passed as a parameter to the MCC 128 functions.
-        channels = [0,1,4,5]
+        channels = [0, 1, 2, 3, 4, 5, 6, 7]
         channel_mask = chan_list_to_mask(channels)
         num_channels = len(channels)
 
@@ -167,13 +171,17 @@ class Measurement:
                 self.lcd_write("Initialized", benchmark_name)
                 try:
                     print('Starting scan ... Press Ctrl-C to stop\n')
-                    with open(Path(output_folder, benchmark_id + ".csv"), "w") as csvfile, open(Path(output_folder, benchmark_id + "_meta.csv"), "w") as meta_csvfile:
-                        writer = csv.writer(csvfile)
+                    with open(Path(output_folder, benchmark_id + ".csv"), "w") as csvfile, open(
+                            Path(output_folder, benchmark_id + "_meta.csv"), "w") as meta_csvfile:
+
+                        # write meta information to a csv file
                         meta_writer = csv.writer(meta_csvfile)
                         meta_writer.writerow(["Channels", ', '.join([str(chan) for chan in channels])])
                         meta_writer.writerow(["Requested Scan Rate", scan_rate])
                         meta_writer.writerow(["Actual Scan Rate", actual_scan_rate])
                         meta_writer.writerow(['ID', hat.serial()])
+
+                        writer = csv.writer(csvfile)
 
                         # Configure and start the scan.
                         # Since the continuous option is being used, the samples_per_channel
@@ -184,7 +192,8 @@ class Measurement:
                         hat.a_in_scan_start(channel_mask, samples_per_channel, scan_rate,
                                             options)
 
-                        t = MeasurementThread(hat=hat, num_channels=num_channels, writer=writer, meta_writer=meta_writer)
+                        t = MeasurementThread(hat=hat, num_channels=num_channels, writer=writer,
+                                              meta_writer=meta_writer)
                         t.start()
                         self.lcd_write("Await trigger", benchmark_name)
 

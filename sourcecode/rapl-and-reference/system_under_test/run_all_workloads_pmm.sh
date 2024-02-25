@@ -27,18 +27,18 @@ for run in {1}; do
     sleep 5
     run_measurement "mulpd" "$SCRIPT_PATH mulpd 1"
     sleep 5
-    run_measurement "stream_add_4" "$SCRIPT_PATH stream_add 4"
+    run_measurement "stream_add_4" "$SCRIPT_PATH stream-separated/stream_add_small 4"
     sleep 5
-    run_measurement "stream_scale_4" "$SCRIPT_PATH stream_scale 4"
+    run_measurement "stream_scale_4" "$SCRIPT_PATH stream-separated/stream_scale_small 4"
     sleep 5
-    run_measurement "stream_triad_4" "$SCRIPT_PATH stream_triad 4"
+    run_measurement "stream_triad_4" "$SCRIPT_PATH stream-separated/stream_triad_small 4"
     sleep 5
-    run_measurement "stream_copy_4" "$SCRIPT_PATH stream_copy 4"
+    run_measurement "stream_copy_4" "$SCRIPT_PATH stream-separated/stream_copy_small 4"
     sleep 5
-    run_measurement "stream_copy_2" "$SCRIPT_PATH stream_copy 2"
+    run_measurement "stream_copy_2" "$SCRIPT_PATH stream-separated/stream_copy_small 2"
     sleep 5
-    run_measurement "stream_copy_1" "$SCRIPT_PATH stream_copy 1"
+    run_measurement "stream_copy_1" "$SCRIPT_PATH stream-separated/stream_copy_small 1"
     sleep 5
-    run_measurement "stream_combined_4" "$SCRIPT_PATH stream_c 4"
+    run_measurement "stream_combined_4" "$SCRIPT_PATH stream-combined/stream_c_small 4"
 
 done

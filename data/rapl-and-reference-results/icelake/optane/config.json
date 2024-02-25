@@ -1,0 +1,45 @@
+{
+	"riser_names": ["PMem", "DRAM"],
+	"memory_population": "1x32GB DDR4 + 1x128GB PMM (PMM Allocation)",
+	"memory_allocation": "PMM Allocation",
+	"architecture": "Intel Ice Lake",
+	"plot_sum": true,
+	"channels": [
+		{
+			"riser": 0,
+			"name": "12v",
+			"voltage_channel": 7,
+			"voltage_drop_channel": 2,
+			"csr_resistance": 0.005,
+			"gain": 200,
+			"voltage_gain": 0.23319027181
+		},
+		{
+			"riser": 0,
+			"name": "vdd",
+			"voltage_channel": 5,
+			"voltage_drop_channel": 1,
+			"csr_resistance": 0.0025,
+			"gain": 100,
+			"voltage_gain": 1.0
+		},
+		{
+			"riser": 1,
+			"name": "vpp",
+			"voltage_channel": 6,
+			"voltage_drop_channel": 3,
+			"csr_resistance": 0.005,
+			"gain": 200,
+			"voltage_gain": 1
+		},
+		{
+			"riser": 1,
+			"name": "vdd",
+			"voltage_channel": 4,
+			"voltage_drop_channel": 0,
+			"csr_resistance": 0.0025,
+			"gain": 100,
+			"voltage_gain": 1.0
+		}
+	]
+}

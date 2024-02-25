@@ -16,7 +16,7 @@ def prompt_sudo():
     return ret == 0
 
 par = argparse.ArgumentParser(prog="power collector", description='Collect RAPL measurements during the execution of a provided application and trace the actual power consumption using the Pi')
-par.add_argument('-P', dest="raplPath", default="/home/user01/rapl-trace/main.out", type=str, help="Path to the compiled RAPL trace executable.")
+par.add_argument('-P', dest="raplPath", default="./rapl-trace/sample-rapl.exe", type=str, help="Path to the compiled RAPL trace executable.")
 par.add_argument("-I", dest="sampleInterval", default=1, type=int, help="RAPL sampling interval in milliseconds.")
 par.add_argument("-S", dest="serialPort", default="/dev/ttyACM0", type=str, help="Path to the serial port interface of the MCP2221")
 par.add_argument("-N", dest="name", default="unnamed", type=str, help="The name of the application to execute. Will be displayed on the LCD.")
@@ -51,12 +51,14 @@ else:
     print("Skipping serial port communication")
 
 cmd_args = [args.raplPath, f"{int(args.sampleInterval*1000)}"] + command.split(" ")
-process = subprocess.Popen(cmd_args, stdout=subprocess.PIPE, stderr=subprocess.PIPE)  # launch the rapl tracing with the delegate application as a subprocess
+process = subprocess.Popen(cmd_args, stdout=subprocess.PIPE, stderr=subprocess.PIPE)  # launch the RAPL tracing with
+# the delegate application as a subprocess
 with open(output_file, "w") as f:
     for line in iter(process.stderr.readline, ""):
         if not line:
             break
-        f.write(line.decode())  # write stderr of the rapl traces to a file. The standard error stream contains the RAPL measurements
+        f.write(line.decode())  # write stderr of the RAPL traces to a file. The standard error stream contains the
+        # RAPL measurements
 for line in iter(process.stdout.readline, ""):
     if not line:
         break

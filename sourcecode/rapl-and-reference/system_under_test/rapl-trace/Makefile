@@ -1,7 +1,7 @@
-OBJS	= main.o
-SOURCE	= main.c
+OBJS	= sample-rapl.o
+SOURCE	= sample-rapl.c
 HEADER	=
-OUT	= main.out
+OUT	= sample-rapl.exe
 CC	 = gcc
 FLAGS	 = -g -c -Wall -fno-lto
 LFLAGS	 = -lm -fno-lto
