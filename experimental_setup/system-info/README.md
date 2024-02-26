@@ -9,7 +9,8 @@
 - make
 
 ### Specific software environment requirements for each experiment:
-- Figure 5: CS-AMPLIFIER-ERROR-TOOL from https://www.ti.com/tool/CS-AMPLIFIER-ERROR-TOOL (any instructions here?)
+- Figure 5: CS-AMPLIFIER-ERROR-TOOL from https://www.ti.com/tool/CS-AMPLIFIER-ERROR-TOOL
+  - Preconfigured versions of this Excel tool are bundled with this artifact
 - Figure 6: N/A
 - Figure 7-15: require probing signals from riser cards. To collect such data, specific software setup for the Raspberry Pi and the test machine are listed in **experimental_setup/reproduction_instructions.pdf**.
     - Intel compiler icx
