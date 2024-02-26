@@ -3,7 +3,7 @@ This artifact accompanies the research paper *An Experimental Setup to Evaluate 
 # Artifact Structure:
 - **data/**: Software requirements for visualizing the plots, raw measurement data, visualization scripts, and generated figures
 - **experimental_setup/**: Hardware and software requirements for conducting experiments
-- **sourcecode/**: Scripts for collecting and processing measurement data
+- **sourcecode/**: Scripts for collecting and processing measurement data and instructions how to prepare and run the experiments
 
 
 # Artifact Reproduction Procedure
@@ -15,13 +15,13 @@ This artifact accompanies the research paper *An Experimental Setup to Evaluate 
 
 ## To collect experimental data for:
 - Figure 5:
-    - TODO
+    - The `Current Sense Amplifier Comparison and Error Calculator` tool from Texas Instruments is provided with all parameters preconfigured in the ´/data/error-margin-analysis` folder.
 - Figure 6:
-    - navigate to **sourcecode/rapl-update-interval**
-    - follow instructions in **README.md**
+    - Navigate to `/sourcecode/rapl-update-interval`
+    - Follow instructions in `/sourcecode/rapl-update-interval/README.md`
 - Figure 7-15:
-    - navigate to **sourcecode/**
-    - follow instructions in TODO
+    - Navigate to `/sourcecode/rapl-and-reference`
+    - Follow instructions in `/sourcecode/rapl-and-reference/README.md`
 
 ## To plot collected data:
-- follow instructions in **data/README.md** per specific figure
+- Follow instructions in `/data/README.md` per-figure specific instructions
