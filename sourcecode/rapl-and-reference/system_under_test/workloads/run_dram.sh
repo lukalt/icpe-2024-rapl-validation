@@ -1,6 +1,7 @@
 #!/bin/bash
 BENCHMARK="$1"
 N_THREADS="$2"
+# determine the absolute path of the current script
 SCRIPT_DIR="$(dirname "$(readlink -f "$0")")"
 source /opt/intel/oneapi/compiler/latest/env/vars.sh
 source /opt/intel/oneapi/mkl/latest/env/vars.sh

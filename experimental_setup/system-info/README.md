@@ -26,18 +26,18 @@
 ## Directory content:
 
 **Broadwell**
-- *dmidecode_hardware.txt*: output of `dmidecode`
+- `dmidecode_hardware.txt`: output of `dmidecode`
+- `pip_packages.txt`:  All Python packages installed on the Broadwell-EP system.
+- `yum_packages.txt`: All Yum packages installed on the Broadwell-EP system.
 
 **Ice Lake**
-- *dmidecode_hardware.txt*: output of `dmidecode`
-- *numa-topology.txt*: output of `numactl -H`
-- *ndctl.txt*: Output of `ndctl namespaces`
-- *daxctl.txt*: Output of `daxctl namespaces`
+- `dmidecode_hardware.txt`: output of `dmidecode`
+- `numa-topology.txt`: output of `numactl -H`
+- `ndctl.txt`: Output of `ndctl namespaces` (populated with 1x128GB PMM per socket)
+- `daxctl.txt`: Output of `daxctl namespaces` (populated with 1x128GB PMM per socket)
+- `pip_packages.txt`:  All Python packages installed on the Ice Lake-SP system.
+- `yum_packages.txt`: All Yum packages installed on the Ice Lake-SP system.
 
-
-
-**pip_packages.txt**
-contains all Python packages installed on both the Broadwell-EP and Ice Lake-SP systems.
-
-**yum_packages.txt**
-all yum package manager packages installed on both the Broadwell-EP and Ice Lake-SP systems.
+**Raspberry Pi**
+- `pip_packages.txt`: Contains all Python packages installed on the Pi.
+- `apt_packages.txt`: Contains all Apt packages installed on the Pi.

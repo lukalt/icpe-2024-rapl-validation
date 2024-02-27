@@ -27,4 +27,4 @@ See corresponding `README.md` files for more information.
 - **error-margin-analysis/**: Data and visualization for the measurement error analysis
 - **rapl-and-reference-results/**: Data and visualization for the measurements from riser cards on IceLake-SP and Broadwell-EP system
 - **rapl-update-interval/**: Data and visualization for the RAPL update interval evaluation on the IceLake-SP and Broadwell-EP system
-- **requirements.txt**: python packages required to create the environment
+- **requirements.txt**: Python packages required to create the environment (load with `pip install -r requirements.txt`)

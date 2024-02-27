@@ -1,6 +1,6 @@
 # RAPL and Reference Power Consumption collection
 
-This folders contains the main source code and scripts to collect RAPL and reference measurements, which requires software both on a Raspberry Pi and the system under test.
+This folder contains the main source code and scripts to collect RAPL and reference measurements, which requires software both on a Raspberry Pi and the system under test.
 In this `README`, we describe the structure of the subfolders and give instructions on how to reproduce the experiments.
 - `rasperry_pi` contains all sourcecode for the Raspberry Pi
 - `system_under_test/` contains all sourcecode for the System under Test (i.e., the Ice Lake-SP and Broadwell-EP systems for this paper)

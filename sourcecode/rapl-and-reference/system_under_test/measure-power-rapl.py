@@ -1,12 +1,14 @@
 #!/usr/bin/env python
-import serial
-from time import sleep, time
-import sys
-import subprocess
-import os
 import argparse
+import os
+import subprocess
+import sys
 import uuid
 from pathlib import Path
+from time import sleep, time
+
+import serial
+
 
 def prompt_sudo():
     ret = 0
@@ -15,11 +17,16 @@ def prompt_sudo():
         ret = subprocess.check_call("sudo -v -p '%s'" % msg, shell=True)
     return ret == 0
 
-par = argparse.ArgumentParser(prog="power collector", description='Collect RAPL measurements during the execution of a provided application and trace the actual power consumption using the Pi')
-par.add_argument('-P', dest="raplPath", default="./rapl-trace/sample-rapl.exe", type=str, help="Path to the compiled RAPL trace executable.")
+
+par = argparse.ArgumentParser(prog="power collector",
+                              description='Collect RAPL measurements during the execution of a provided application and trace the actual power consumption using the Pi')
+par.add_argument('-P', dest="raplPath", default="./rapl-trace/sample-rapl.exe", type=str,
+                 help="Path to the compiled RAPL trace executable.")
 par.add_argument("-I", dest="sampleInterval", default=1, type=int, help="RAPL sampling interval in milliseconds.")
-par.add_argument("-S", dest="serialPort", default="/dev/ttyACM0", type=str, help="Path to the serial port interface of the MCP2221")
-par.add_argument("-N", dest="name", default="unnamed", type=str, help="The name of the application to execute. Will be displayed on the LCD.")
+par.add_argument("-S", dest="serialPort", default="/dev/ttyACM0", type=str,
+                 help="Path to the serial port interface of the MCP2221")
+par.add_argument("-N", dest="name", default="unnamed", type=str,
+                 help="The name of the application to execute. Will be displayed on the LCD.")
 args, remainder = par.parse_known_args(sys.argv)
 if len(remainder) > 0 and remainder[0].lower().endswith(".py"):
     remainder = remainder[1:]
@@ -46,11 +53,11 @@ if args.serialPort != "/dev/null":
     serialPort.write((name + "\n").encode())
     serialPort.write((run_id + "\n").encode())
     serialPort.close()
-    sleep(0.5) # wait 500ms so the Pi can correctly process the data
+    sleep(0.5)  # wait 500ms so the Pi can correctly process the data
 else:
     print("Skipping serial port communication")
 
-cmd_args = [args.raplPath, f"{int(args.sampleInterval*1000)}"] + command.split(" ")
+cmd_args = [args.raplPath, f"{int(args.sampleInterval * 1000)}"] + command.split(" ")
 process = subprocess.Popen(cmd_args, stdout=subprocess.PIPE, stderr=subprocess.PIPE)  # launch the RAPL tracing with
 # the delegate application as a subprocess
 with open(output_file, "w") as f:
