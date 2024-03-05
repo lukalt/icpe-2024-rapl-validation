@@ -4,7 +4,7 @@ This directory contains the raw measurement data from our experiments, scripts t
 - Desktop environment is required (Windows 10 Pro was used for the paper, Linux/macOS should work as well)
 - Python 3 (v.3.10.13 was used for the paper) with the following packages:
   - Install required dependencies. Either:
-    - manually: `pip install numpy matplotlib pandas pathlib notebook Pyarrow`
+    - manually: `pip install numpy matplotlib pandas pathlib notebook Pyarrow openpyxl`
     - OR restore environment from the provided `requirements.txt` using pip: `pip install -r requirements.txt`
     - OR load the provided Conda environment (recommended): 
         - Install `conda 4.14.0` or later and open an (Ana)conda prompt. Load the environment this way:
