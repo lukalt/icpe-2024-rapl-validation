@@ -15,16 +15,16 @@ This directory contains the raw measurement data from our experiments, scripts t
 
 
 ### Specific Instructions for Data Visualization per figure:
-- Figure 5: navigate to **data/error-margin-analysis** in the Jupyter, double-click on **Visualize_Error_Analysis.ipynb**, and run all cells in the notebook.
-- Figure 6: navigate to **data/update-interval/**, double-click on **Visualize_Update_Interval.ipynb**, and run all the cell in the notebook. 
-- Figures 7-15: navigate to **data/rapl-and-reference-results**, double-click on **Visualize_RAPL_Results.ipynb**, and run all the cell in the notebook.
+- Figure 5: navigate to `data/error-margin-analysis` in the Jupyter, double-click on `Visualize_Error_Analysis.ipynb`, and run all cells in the notebook.
+- Figure 6: navigate to `data/update-interval/`, double-click on `Visualize_Update_Interval.ipynb`, and run all the cell in the notebook. 
+- Figures 7-15: navigate to `data/rapl-and-reference-results`, double-click on `Visualize_RAPL_Results.ipynb`, and run all the cell in the notebook.
 
 See corresponding `README.md` files for more information.
 
 
 ## Directory Content:
 
-- **error-margin-analysis/**: Data and visualization for the measurement error analysis
-- **rapl-and-reference-results/**: Data and visualization for the measurements from riser cards on IceLake-SP and Broadwell-EP system
-- **rapl-update-interval/**: Data and visualization for the RAPL update interval evaluation on the IceLake-SP and Broadwell-EP system
-- **requirements.txt**: Python packages required to create the environment (load with `pip install -r requirements.txt`)
+- `error-margin-analysis/`: Data and visualization for the measurement error analysis
+- `rapl-and-reference-results/`: Data and visualization for the measurements from riser cards on IceLake-SP and Broadwell-EP system
+- `rapl-update-interval/`: Data and visualization for the RAPL update interval evaluation on the IceLake-SP and Broadwell-EP system
+- `requirements.txt`: Python packages required to create the environment (load with `pip install -r requirements.txt`)
