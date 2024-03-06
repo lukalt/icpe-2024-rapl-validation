@@ -11,11 +11,11 @@ This artifact accompanies the research paper *An Experimental Setup to Evaluate 
 - hardware setup:
     - follow instructions in **experimental_setup/README.md**
 - software setup:
-    - follow instructions in **experimental_setup/system-info/README.md**)
+    - follow instructions in **experimental_setup/system-info/README.md**
 
 ## To collect experimental data for:
 - Figure 5:
-    - The `Current Sense Amplifier Comparison and Error Calculator` tool from Texas Instruments is provided with all parameters preconfigured in the ´/data/error-margin-analysis` folder.
+    - The `Current Sense Amplifier Comparison and Error Calculator` tool from Texas Instruments is provided with all parameters preconfigured in the `/data/error-margin-analysis` folder.
 - Figure 6:
     - Navigate to `/sourcecode/rapl-update-interval`
     - Follow instructions in `/sourcecode/rapl-update-interval/README.md`
