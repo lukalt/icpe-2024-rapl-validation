@@ -12,7 +12,7 @@
 - Figure 5: CS-AMPLIFIER-ERROR-TOOL from https://www.ti.com/tool/CS-AMPLIFIER-ERROR-TOOL
   - Preconfigured versions of this Excel tool are bundled with this artifact
 - Figure 6: N/A
-- Figure 7-15: require probing signals from riser cards. To collect such data, specific software setup for the Raspberry Pi and the test machine are listed in **experimental_setup/reproduction_instructions.pdf**.
+- Figure 7-15: require probing signals from riser cards. To collect such data, specific software setup for the Raspberry Pi and the test machine are listed in **sourcecode/rapl-and-reference/README.md**.
     - Intel compiler icx
     - CBLAS or Intel MKL
     - Figures 7, 11, 14: require Optane PMMs in addition to DRAM. The PMMs are to be configured in AppDirect mode which can be done with:
